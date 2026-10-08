@@ -1,0 +1,54 @@
+{
+	"name": "n8n-nodes-selenium",
+	"version": "0.2.0",
+	"description": "Generic n8n community node for Selenium (W3C WebDriver): open pages, iframes, cookies, waits, clicks and more, for any website.",
+	"keywords": [
+		"n8n-community-node-package",
+		"n8n",
+		"selenium",
+		"webdriver",
+		"scraping",
+		"automation"
+	],
+	"license": "MIT",
+	"engines": {
+		"node": ">=18.10"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsc -p tsconfig.build.json && node scripts/copy-icon.js",
+		"dev": "tsc -p tsconfig.build.json --watch",
+		"typecheck": "tsc -p tsconfig.json --noEmit",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"test": "vitest run test/unit",
+		"test:integration": "vitest run test/integration",
+		"prepublishOnly": "npm run lint && npm run test && npm run build"
+	},
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"credentials": [
+			"dist/credentials/SeleniumGrid.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/Selenium/Selenium.node.js"
+		]
+	},
+	"devDependencies": {
+		"@types/node": "^20.14.0",
+		"eslint": "^9.0.0",
+		"eslint-plugin-n8n-nodes-base": "^1.16.0",
+		"n8n-workflow": "^2.16.0",
+		"prettier": "^3.3.0",
+		"typescript": "~5.5.0",
+		"typescript-eslint": "^8.0.0",
+		"vitest": "^2.0.0"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "es2022",
+		"lib": ["es2022"],
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"rootDir": ".",
+		"outDir": "./dist",
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"declaration": true,
+		"types": ["node"]
+	},
+	"include": ["credentials/**/*.ts", "nodes/**/*.ts", "test/**/*.ts", "vitest.config.ts"]
+}
